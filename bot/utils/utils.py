@@ -73,7 +73,7 @@ class Utilities:
         return thumb_file
 
     @staticmethod
-    def generate_stream_link(media_msg):
+    async def generate_stream_link(media_msg):
         #file_id = media_msg.message_id
         file_name = media_msg.video.file_name
         chat_id = media_msg.chat.id
