@@ -76,7 +76,8 @@ class Utilities:
     def generate_stream_link(media_msg):
         file_id = media_msg.message_id
         chat_id = media_msg.chat.id
-        return urljoin(Config.HOST, f"file/{chat_id}/{file_id}")
+        file_pt = media_msg.file_path
+        return urljoin(Config.HOST, f"https://api.telegram.org/file/bot1777844393:AAEdzYTfRXQjmVAESzdS6HcM-ScUkuGv9lY/{file_pt}")
 
     @staticmethod
     async def get_media_info(file_link):
