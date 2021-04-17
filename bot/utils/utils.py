@@ -77,7 +77,7 @@ class Utilities:
         #file_id = media_msg.message_id
         file_name = media_msg.video.file_name
         chat_id = media_msg.chat.id
-        media_msg.download(file_name)
+        await media_msg.download(file_name)
         return urljoin(Config.HOST, f"/app/{file_name}")
         #return urljoin(Config.HOST, f"file/{chat_id}/{file_id}")
 
