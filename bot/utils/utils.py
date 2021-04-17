@@ -74,9 +74,12 @@ class Utilities:
 
     @staticmethod
     def generate_stream_link(media_msg):
-        file_id = media_msg.message_id
+        #file_id = media_msg.message_id
+        file_name = media_msg.video.file_name
         chat_id = media_msg.chat.id
-        return urljoin(Config.HOST, f"file/{chat_id}/{file_id}")
+        media_msg.download(file_name)
+        return urljoin(Config.HOST, f"/app/{file_name}")
+        #return urljoin(Config.HOST, f"file/{chat_id}/{file_id}")
 
     @staticmethod
     async def get_media_info(file_link):
